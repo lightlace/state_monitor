@@ -30,6 +30,8 @@ while (1){
     read(fd, buffer, 32);
     printf("Buffer value: %s\n", buffer);
     lseek(fd,0L,SEEK_SET);
+  } else if (sel_ret == -1 ){
+    printf("select syscall failed with %s\n", sel_ret);
   }
 }
 return 0;
